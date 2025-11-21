@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMP2132 Final Project - Hangman</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="finalProject.js" defer></script>
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Hangman Game</h1>
+
+    <div id="hint-box">
+        <p><strong>Hint:</strong> <span id="hint">Loading...</span></p>
+    </div>
+
+    <div id="word-box">
+        <p id="wordDisplay">_ _ _ _</p>
+    </div>
+
+    <div id="image-box">
+        <img id="hangmanImg" src="images/hangman-1.jpg" alt="hangman" width="250">
+    </div>
+
+<div id="used-letters">
+    <p>Used Letters: <span id="usedList"></span></p>
+</div>
+
+    <div id="letterButtons"></div>
+
+    <div id="result"></div>
+    <p id="attempts-left"></p>
+    <button id="playAgainBtn" class="hidden">Play Again</button>   
+
+    <p id="stats"></p>
+    
+    <footer>
+        <p>Created by Sepehr Masoudi - COMP2132 Final Project</p>
+    </footer>
+    </div>
+</body>
+</html>

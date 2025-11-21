@@ -1,0 +1,151 @@
+@charset "UTF-8";
+body {
+  font-family: Arial, sans-serif;
+  background: #baaca4;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+#wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+#wordDisplay {
+  font-size: 32px;
+  letter-spacing: 10px;
+  margin: 15px 0;
+  color: #34495e;
+  font-weight: bold;
+}
+
+#hint-box {
+  background: #eaf2f8;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #b3cde0;
+}
+#hint-box strong {
+  color: #1f618d;
+  font-size: 18px;
+}
+
+#image-box img {
+  margin: 15px 0;
+  border-radius: 8px;
+  max-width: auto;
+  height: 100%;
+}
+
+#letterButtons {
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+#letterButtons button {
+  background: #3498db;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 18px;
+  padding: 12px 0;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#letterButtons button:hover:not(:disabled) {
+  background: #1c6fa8;
+  transform: scale(1.1);
+}
+
+#letterButtons button.used {
+  background: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#used-letters {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #c0392b;
+  font-weight: bold;
+}
+
+#attempts-left {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #e67e22;
+  font-weight: bold;
+}
+
+#result h2 {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #27ae60;
+}
+
+#result h2.win {
+  color: #27ae60; /* green */
+}
+
+/* LOSE MESSAGE — red */
+#result h2.lose {
+  color: #e74c3c; /* red */
+}
+
+#playAgainBtn {
+  background: #2ecc71;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  padding: 12px 30px;
+  font-size: 18px;
+  margin-top: 10px;
+  position: relative;
+}
+
+#playAgainBtn:hover {
+  background: #27ae60;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  margin-top: 40px;
+  background: #bfbfbf;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding: 15px;
+}
