@@ -1,4 +1,3 @@
-// MIXINS
 @mixin mainButton($bgColor, $textColor) {
   background: $bgColor;
   color: $textColor;
@@ -15,7 +14,7 @@
   box-shadow: 0 4px 10px $shadowColor;
 }
 
-// BASIC PAGE LAYOUT
+
 body {
   font-family: Arial, sans-serif;
   background: #baaca4;
@@ -34,7 +33,7 @@ body {
   @include boxShadow();
 }
 
-// HEADER
+
 h1 {
   margin-bottom: 20px;
   color: #2c3e50;
@@ -43,7 +42,7 @@ h1 {
   letter-spacing: 2px;
 }
 
-// WORD DISPLAY
+
 #wordDisplay {
   font-size: 32px;
   letter-spacing: 10px;
@@ -52,7 +51,7 @@ h1 {
   font-weight: bold;
 }
 
-// HINT BOX
+
 #hint-box {
   background: #eaf2f8;
   padding: 12px;
@@ -66,7 +65,7 @@ h1 {
   }
 }
 
-// HANGMAN IMAGE
+
 #image-box img {
   margin: 15px 0;
   border-radius: 8px;
@@ -74,7 +73,7 @@ h1 {
   height: 100%;
 }
 
-// LETTER BUTTONS
+// 
 #letterButtons {
   margin-top: 15px;
   display: grid;
@@ -103,7 +102,7 @@ h1 {
   transform: none;
 }
 
-// USED LETTERS
+
 #used-letters {
   margin-top: 20px;
   font-size: 16px;
@@ -111,7 +110,7 @@ h1 {
   font-weight: bold;
 }
 
-// REMAINING ATTEMPTS
+
 #attempts-left {
   margin-top: 10px;
   font-size: 16px;
@@ -119,22 +118,22 @@ h1 {
   font-weight: bold;
 }
 
-// RESULT MESSAGE
+
 #result h2 {
   margin-top: 20px;
   font-size: 22px;
   color: #27ae60;
 }
 #result h2.win {
-  color: #27ae60; /* green */
+  color: #27ae60; 
 }
 
-/* LOSE MESSAGE — red */
+
 #result h2.lose {
-  color: #e74c3c; /* red */
+  color: #e74c3c;
 }
 
-// PLAY AGAIN BUTTON
+
 #playAgainBtn {
   @include mainButton(#2ecc71, white);
   border: none;
@@ -144,15 +143,17 @@ h1 {
   position: relative;
 }
 
+
 #playAgainBtn:hover {
   background: #27ae60;
 }
+
 
 .hidden {
   display: none;
 }
 
-// FOOTER
+
 footer {
   margin-top: 40px;
   background: #bfbfbf;
