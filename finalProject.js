@@ -1,9 +1,9 @@
-let words = [];          // Loaded JSON list
+let words = [];          // JSON word list array
 let chosenWord = "";     // Selected word
 let chosenHint = "";     // Selected hint
-let displayWord = [];    // _ _ _ array
-let usedLetters = [];    // Track used letters
-let wrongGuesses = 0;    // How many wrong
+let displayWord = [];    // Array for the selected word
+let usedLetters = [];    // Array for used letters
+let wrongGuesses = 0;    // Num of wrong guesses
 let maxGuesses = 6;      // 6 allowed mistakes
 
 // HTML elements
@@ -16,6 +16,7 @@ const playAgainBtn = document.getElementById("playAgainBtn");
 const letterButtonsBox = document.getElementById("letterButtons");
 const attemptsLeftEl = document.getElementById("attempts-left");
 
+// Creating an object to track game statistics
 const gameStats = {
     wins: 0,
     losses: 0,
@@ -29,7 +30,7 @@ const gameStats = {
 };
 
  
-// LOAD JSON
+// Load JSON File
 fetch("data/words.json")
     .then(response => response.json())
     .then(data => {
@@ -38,7 +39,7 @@ fetch("data/words.json")
     });
 
 
-// CREATE A–Z BUTTONS
+// Display A-Z Letter Buttons
 function createLetterButtons() {
     letterButtonsBox.innerHTML = "";
 
@@ -57,7 +58,7 @@ function createLetterButtons() {
     }
 }
 
-// START THE GAME
+// Initialize Game
 function startGame() {
     const randomIndex = Math.floor(Math.random() * words.length);
     chosenWord = words[randomIndex].word.toLowerCase();
@@ -87,7 +88,7 @@ function startGame() {
 }
 
 
-// HANDLE LETTER CLICK
+// Check Letter clicked
 function handleLetterClick(letter) {
 
     if (usedLetters.includes(letter)) {
@@ -119,21 +120,7 @@ function handleLetterClick(letter) {
     checkGameOver();
 }
 
-
-// CHECK GAME END
-// function checkGameOver() {
-
-//     if (displayWord.join("") === chosenWord) {
-//         resultEl.innerHTML = `<h2 class="fade win">CONGRATS, You Win! 🎉</h2>`;
-//         endGame();
-//     }
-
-//     if (wrongGuesses === maxGuesses) {
-//         resultEl.innerHTML = `<h2 class="fade lose">You Lost! The word was: ${chosenWord}</h2>`;
-//         endGame();
-//     }
-// }
-
+// Check Win/Lose
 function checkGameOver() {
 
     if (displayWord.join("") === chosenWord) {
@@ -154,7 +141,7 @@ function checkGameOver() {
 }
 
 
-// END GAME
+// End Game
 function endGame() {
     // Disable all buttons
     const allButtons = letterButtonsBox.querySelectorAll("button");
@@ -175,7 +162,7 @@ playAgainBtn.classList.remove("hidden");
     `Wins: ${gameStats.wins} | Losses: ${gameStats.losses} | Games Played: ${gameStats.totalGames}`;
 }
 
-// PLAY AGAIN
+// Play Again Button
 playAgainBtn.addEventListener("click", function() {
     startGame();
 });
